@@ -6,6 +6,8 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
+        if (nums.size()<2)
+            return false;
         vector<int> ans;
         std::map<int,int> my_map;
         for (int i = 0; i < nums.size(); i++) {
