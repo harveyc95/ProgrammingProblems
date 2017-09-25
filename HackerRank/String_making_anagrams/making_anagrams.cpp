@@ -24,18 +24,11 @@
 using namespace std;
 
 int number_needed(string a, string b) {
-    std::map<char,int> map;
-    std::map<char,int>::iterator it;
+    std::vector<int> v(26,0);
     int ans = 0;
-    for (int i = 0; i < a.length(); i ++) {
-        map[a[i]] = map[a[i]] + 1;
-    }
-    for (int i = 0; i < b.length(); i ++) {
-        map[b[i]] = map[b[i]] - 1;
-    }
-    for (it = map.begin(); it != map.end(); it++) {
-        ans += abs(it->second);
-    }
+    for (auto i : a)    v[i - 'a'] += 1;
+    for (auto j : b)    v[j - 'a'] -= 1;
+    for (auto k : v)    ans += abs(k);
     return ans;
 }
 
