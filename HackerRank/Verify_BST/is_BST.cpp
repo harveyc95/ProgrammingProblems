@@ -1,10 +1,10 @@
-The Node struct is defined as follows:
-   struct Node {
-      int data;
-      Node* left;
-      Node* right;
-   }
-*/
+// The Node struct is defined as follows:
+//    struct Node {
+//       int data;
+//       Node* left;
+//       Node* right;
+//    }
+
 #include <limits.h>
 
 bool checkBST(Node* root) {
