@@ -1,3 +1,6 @@
+// time complexity O(n^3)
+// space complexity O(1)
+
 #include <string>
 
 class Solution {
