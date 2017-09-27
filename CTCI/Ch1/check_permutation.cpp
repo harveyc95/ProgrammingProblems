@@ -13,22 +13,15 @@ bool check_permutation (std::string a, std::string b) {
 	}
 
 	for (int j = 0; j < b.length(); j++) {
-		if (arr[b[j]] > 0) {
+		if (arr[b[j]] > 0)	
 			arr[b[j]] -= 1;
-		} else {
-			arr[b[j]] += 1;
-		}
+		else
+			return false;
 	}
 
-	int sum = 0;
-	for (int k = 0; k < 128; k++) {
-		sum += arr[k];
-	}
-
-	std::cout << sum << std::endl;
-	return sum == 0 ? true : false;
+	return true;
 }
 
 int main () {
-	std::cout << check_permutation("ABCDEFG", "ABCDEFG") << std::endl;
+	std::cout << check_permutation("ABCDEFG", "ABCDEFI") << std::endl;
 }
