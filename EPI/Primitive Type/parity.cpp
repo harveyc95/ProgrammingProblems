@@ -1,6 +1,7 @@
 #include <iostream>
 
-short parity (unsigned long x) {
+// time complexity O(n)
+short parity_simple (unsigned long x) {
 	short count = 0;
 	while (x) {
 		// std::cout << x << std::endl;
@@ -10,7 +11,9 @@ short parity (unsigned long x) {
 	return count;
 }
 
+
+
 int main () {
 	unsigned long x = 255;
-	std::cout << parity(x) << std::endl;
+	std::cout << parity_simple(x) << std::endl;
 }
