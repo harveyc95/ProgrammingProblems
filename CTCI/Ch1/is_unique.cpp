@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 
+// time complexity O(1) - constant
+// space complexity O(1) - constant
+
 bool is_unique (std::string s) {
 	if (s.length() > 128) return false;
 
