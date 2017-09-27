@@ -11,8 +11,6 @@ short parity_simple (unsigned long x) {
 	return count;
 }
 
-
-
 int main () {
 	unsigned long x = 255;
 	std::cout << parity_simple(x) << std::endl;
