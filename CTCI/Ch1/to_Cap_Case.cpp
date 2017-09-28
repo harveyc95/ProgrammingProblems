@@ -1,6 +1,11 @@
 #include <string>
 #include <iostream>
 
+// time complexity O(n)
+// space complexity O(1)
+
+// takes input string s
+// capitalizes the first letter of each word
 std::string toCapCase(std::string s) {
   int index = 0;
   for (int i = 0; i < s.length(); i++) {
