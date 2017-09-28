@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 
-// time complexity
-// space complexity
+// time complexity O(MN)
+// space complexity O(MN)
 
 
 // M >= 1, N >= 1
@@ -27,5 +27,5 @@ int unique_path (int M, int N) {
 }
 
 int main () {
-	std::cout << unique_path(4,4) << std::endl;
+	std::cout << unique_path(3,3) << std::endl;
 }
