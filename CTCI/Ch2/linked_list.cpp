@@ -19,3 +19,10 @@ Node* MergeLists(Node *headA, Node* headB)
     return merged;
 }
 
+void ReversePrint(Node *head)
+{
+    if (head->next != NULL) {
+        ReversePrint(head->next);
+    }
+    std::cout<<head->data<< endl;
+}
