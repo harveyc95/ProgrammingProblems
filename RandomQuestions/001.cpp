@@ -1,7 +1,6 @@
 // 1. Round a number to the next largest multiple of 16
 
 #include <iostream>
-#include <climits>
 
 int round_to_largest_16(int x) {
 	return (x & 0xF) ? ((x >> 4 << 4) + 16) : x;
