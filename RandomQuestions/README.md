@@ -5,3 +5,4 @@ A collection of interview questions
 1. Round a number to the next largest multiple of 16
 2. Swap even and odd bits of a 32 bit integer
 3. Reverse a string
+4. Find missing integer in ascending array of ints
