@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 
+// time complexity - O(n)
+// space complexity - O(1)
+
 std::string urlify(std::string s) {
 
 	// remove trailing spaces
