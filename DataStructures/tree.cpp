@@ -20,3 +20,10 @@ void inOrder(node *root) {
 	std::cout<<root->data<<" ";
 	inOrder(root->right);
 }
+
+void postOrder(node *root) {
+    if (root == NULL) return;
+    postOrder(root->left);
+    postOrder(root->right);
+    std::cout<<root->data<<" ";
+}
