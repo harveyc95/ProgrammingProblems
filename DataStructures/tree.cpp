@@ -27,3 +27,8 @@ void postOrder(node *root) {
     postOrder(root->right);
     std::cout<<root->data<<" ";
 }
+
+int height(Node* root) {
+        if (root == NULL) return 0;
+        return max(height(root->left), height(root->right)) + 1;
+    }
