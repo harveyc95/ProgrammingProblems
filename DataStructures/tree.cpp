@@ -13,3 +13,10 @@ void preOrder(node *root) {
     preOrder(root->left);
     preOrder(root->right);
 }
+
+void inOrder(node *root) {
+	if (root == NULL) return;
+	inOrder(root->left);
+	std::cout<<root->data<<" ";
+	inOrder(root->right);
+}
