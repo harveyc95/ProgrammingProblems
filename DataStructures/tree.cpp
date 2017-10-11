@@ -42,6 +42,22 @@ void levelOrder(node * root) {
     }
 }
 
+node* insert(node * root, int value) {
+    if (root == NULL) {
+        node* n = new node();
+        n->data = value;
+        n->left = NULL;
+        n->right = NULL;
+        root = n;
+        return root;
+    } else if (value < root->data) {
+        root->left = insert(root->left, value);
+    } else {
+        root->right = insert(root->right, value);
+    }
+    return root;
+}
+
 int height(Node* root) {
         if (root == NULL) return 0;
         return max(height(root->left), height(root->right)) + 1;
