@@ -28,7 +28,21 @@ void postOrder(node *root) {
     std::cout<<root->data<<" ";
 }
 
+void levelOrder(node * root) {
+    if (root == NULL) return;
+    queue <node*> q;
+    q.push(root);
+    node* tmp = NULL;
+    while (!q.empty()) {
+        tmp = q.front();
+        q.pop();
+        std::cout<<tmp->data<<" ";
+        if (tmp->left != NULL) q.push(tmp->left);
+        if (tmp->right != NULL) q.push(tmp->right);
+    }
+}
+
 int height(Node* root) {
         if (root == NULL) return 0;
         return max(height(root->left), height(root->right)) + 1;
-    }
+}
