@@ -8,7 +8,7 @@ public:
         LOOP(i, 0, grid.size()) {
             LOOP(j, 0, grid[0].size()) {
                 if (grid[i][j] == '1') {
-                    BFS(grid, i, j);
+                    DFS(grid, i, j);
                     ++islandCount;
                 }
             }
@@ -18,7 +18,7 @@ public:
     
     void BFS(vector<vector<char>>& grid, int x, int y) {
         int m = grid.size(), n = grid[0].size();
-        grid[x][y] = 0;
+        grid[x][y] = '0';
         std::priority_queue<std::pair<int,int>> myq;
         myq.push({x,y});
         vector<int> dir = {-1,0,1,0,-1};
@@ -32,6 +32,17 @@ public:
                     myq.push({r, c});
                 }
             }
+        }
+        return;
+    }
+    
+    void DFS(vector<vector<char>>& grid, int x, int y) {
+        if (x < 0 || x >= grid.size() || y < 0 || y >= grid[0].size() || grid[x][y] == '0')
+            return;
+        grid[x][y] = '0';
+        vector<int> dir = {-1,0,1,0,-1};
+        LOOP(i, 0, 4) {
+            DFS(grid, x+dir[i], y+dir[i+1]);
         }
         return;
     }
