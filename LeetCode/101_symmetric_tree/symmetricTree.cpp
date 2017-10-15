@@ -31,4 +31,17 @@ public:
         }
         return true;
     }
+    bool isSymmetric(TreeNode* root) {
+        return DFS(root, root);
+    }
+    
+    bool DFS(TreeNode* a, TreeNode* b) {
+        if (a == nullptr && b == nullptr)
+            return true;
+        if (a == nullptr || b == nullptr)
+            return false;
+        if (a->val != b->val)
+            return false;
+        return DFS(a->left, b->right) && DFS(a->right, b->left);
+    }
 };
