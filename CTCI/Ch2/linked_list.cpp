@@ -24,5 +24,13 @@ void ReversePrint(Node *head)
     if (head->next != NULL) {
         ReversePrint(head->next);
     }
-    std::cout<<head->data<< endl;
+    std::cout<<head->data<<std::endl;
+}
+
+void ForwardPrint(Node *head)
+{
+    if (head->next != NULL) {
+        std::cout<<head->data<<std::endl;
+        head = head->next;
+    }
 }
