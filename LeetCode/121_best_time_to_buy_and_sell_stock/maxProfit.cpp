@@ -4,12 +4,11 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        if (prices.size() < 2)  return 0;
-        int minPrice = prices[0], maxProfit = 0;
-        for (int i = 1; i < prices.size(); ++i) {
-            int currProfit = prices[i] - minPrice , currPrice = prices[i];
-            maxProfit = max(currProfit, maxProfit);
-            minPrice = (minPrice > currPrice) ? currPrice : minPrice;
+        int minPrice = INT_MAX, maxProfit = 0;
+        for (auto &price : prices) {
+            int maxProfitToday = price - minPrice;
+            minPrice = min(minPrice, price);
+            maxProfit = max(maxProfit, maxProfitToday);
         }
         return maxProfit;
     }
