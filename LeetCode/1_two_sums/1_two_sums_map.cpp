@@ -1,23 +1,14 @@
-// time complexity O(n)
-// space complexity O(n)
-
-#include <map>
-
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        if (nums.size()<2)
-            return false;
-        vector<int> ans;
-        std::map<int,int> my_map;
+        unordered_map<int, int> map;
         for (int i = 0; i < nums.size(); i++) {
             int complement = target - nums[i];
-            if (my_map.find(complement) != my_map.end()) {
-                ans.push_back(my_map[complement]);
-                ans.push_back(i);
-                return ans;
+            if (map.find(complement) == map.end()) {
+                map[nums[i]] = i;
+            } else {
+                return {map[complement], i};
             }
-            my_map[nums[i]] = i;
         }
     }
 };
